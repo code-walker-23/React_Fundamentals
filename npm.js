@@ -99,3 +99,16 @@ and you just need to push the package.json and package-lock.json file to the git
 whatever you can regenerate donn't push it to the github.Only the essentials files are pushed to the github.
 
 */
+
+
+/* 
+
+dist folder -> it contains development build of the project , it is created when we execute a command npx parcel build index.html. whatever is showing on web page is in dist folder.it is synchronized with parcel cache for modification using hot module replacement.
+
+after executing npx parcel build index.html command , it minified the files , it bundles the files , it compresses the files , it caches the files , it cleans the files and it creates the dist folder.
+
+Now it is ready to deploy the project to the production server.
+
+*/
+
+
