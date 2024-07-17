@@ -1,5 +1,5 @@
-/* 
 
+/* 
 
 const heading = React.createElement("h1", 
   {id:"heading"},
@@ -84,5 +84,17 @@ The crossorigin attribute is particularly useful when dealing with resources tha
 Handling CORS (Cross-Origin Resource Sharing) policies.
 Enabling certain features like Subresource Integrity (SRI) checks for ensuring the integrity of fetched resources.
 Managing how cookies and authentication credentials are sent with requests
+
+*/
+
+/* 
+npm -> it is used to install the packages
+npx -> npx is used to used to execute the packages
+and npx will host development build of the react application to loaclhost:1234
+npm start -> it is used to start the react application
+
+CDN -> it is bad to bring the react and react-dom files from the CDN because it will slow down the application and it will take time to load the application.
+
+It should be better to install the react and react-dom files using the npm and then use the files from the node_modules folder.
 
 */
