@@ -9,7 +9,7 @@ const heading = React.createElement("h1",
 // everything will be rendered in root
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(heading);
-// rebder methos take the object and convert it into the DOM element and render it in the root element
+// render methos take the object and convert it into the DOM element and render it in the root element
 // we are passing an javascript object or react element to the render method such that the element will be rendered in the root element
 
 
@@ -51,6 +51,7 @@ const parent = React.createElement(
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(parent);
 console.log(parent);
+console.log(root);
 
 // React can apply independent changes to the DOM without affecting the other elements in the DOM
 // It can be applied to the samll portions of the DOM without affecting the other elements in the DOM
@@ -62,3 +63,26 @@ console.log(parent);
 // CDN -> Content Delivery Network in react -> it is used to deliver the react and react-dom files to the browser
 // React is only a library and it is not a framework with a lot of features.
 // It is used to create the large scale applications and it is used to create the single page applications
+
+
+// crossorigin attribute
+
+/* The crossorigin attribute in React is used to specify how the browser should handle cross-origin requests for elements like images, scripts, and links. This attribute is part of HTML and can be used in JSX within React components to control the behavior of fetching resources from different origins.
+
+Here are the possible values for the crossorigin attribute and their meanings:
+
+anonymous: This is the default value. It sends a cross-origin request without credentials (cookies, TLS client certificates, etc.).
+use-credentials: This value sends a cross-origin request with credentials.
+"" (empty string): This is equivalent to anonymous.
+
+
+
+Usage Context
+
+The crossorigin attribute is particularly useful when dealing with resources that might be loaded from a different domain than your application's origin. This can be important for:
+
+Handling CORS (Cross-Origin Resource Sharing) policies.
+Enabling certain features like Subresource Integrity (SRI) checks for ensuring the integrity of fetched resources.
+Managing how cookies and authentication credentials are sent with requests
+
+*/
