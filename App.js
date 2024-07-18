@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
 
 /* 
@@ -17,6 +17,7 @@ root.render(heading);
 
 
 // React comes with a philosophy of "Learn Once, Write Anywhere"
+
 // React comes with concept of manipulating the DOM using javascript/react.
 
 // React.createElement() -> it is used to create a element in react. it creates an javascript object and returns it.
@@ -37,12 +38,12 @@ console.log(root);
      </div>
  */
 
-const parent = React.createElement(
+/* const parent = React.createElement(
   "div",
   {id:"parent"},
   [
     React.createElement("div",{id:"child1"},
-    [React.createElement("h1",{id:"heading"},"Hello World"),
+    [React.createElement("h1",{id:"heading"},"Hello World!"),
     React.createElement("p",{id:"paragraph"},"This is a paragraph")
     ]),
     React.createElement("div",{id:"child2"},
@@ -54,10 +55,12 @@ const parent = React.createElement(
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(parent);
 console.log(parent);
-console.log(root);
+console.log(root); */
 
 // React can apply independent changes to the DOM without affecting the other elements in the DOM
+
 // It can be applied to the samll portions of the DOM without affecting the other elements in the DOM
+
 // React at the end of the day is a javascript library that is used to manipulate the DOM
 
 // order of files matters alot in react.
@@ -65,6 +68,7 @@ console.log(root);
 
 // CDN -> Content Delivery Network in react -> it is used to deliver the react and react-dom files to the browser
 // React is only a library and it is not a framework with a lot of features.
+
 // It is used to create the large scale applications and it is used to create the single page applications
 
 
@@ -91,6 +95,7 @@ Managing how cookies and authentication credentials are sent with requests
 */
 
 /* 
+
 npm -> it is used to install the packages
 npx -> npx is used to used to execute the packages
 and npx will host development build of the react application to loaclhost:1234
@@ -100,4 +105,249 @@ CDN -> it is bad to bring the react and react-dom files from the CDN because it 
 
 It should be better to install the react and react-dom files using the npm and then use the files from the node_modules folder.
 
+
+React.createElement() -> it is an object when we render into the DOM it will be converted into the DOM element
+object => DOM element(rendered in the DOM)
+
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+JSX is a statically-typed, object-oriented programming language designed to run on modern web browsers. It is a syntax extension for JavaScript that allows developers to write HTML-like code within their JavaScript files. JSX is commonly used with React to describe what the UI should look like.
+
+JSX, or JavaScript XML, is a syntax extension for JavaScript used with React to describe what the UI should look like. Here are some key points about JSX:
+
+Looks Like HTML: JSX looks similar to HTML but is written within JavaScript. This makes it easier to write and understand the structure of the UI components.
+
+Embedding Expressions: You can embed any JavaScript expression in JSX by wrapping it in curly braces {}. This allows you to dynamically insert values into your UI.
+
+Babel Transpilation: JSX isn't valid JavaScript by itself. Tools like Babel are used to transpile JSX into regular JavaScript function calls (React.createElement), which the browser can understand.
+
+Attributes and Children: You can pass attributes to JSX elements, similar to HTML attributes. Children elements can be nested inside parent elements, creating a tree structure.
+
+Self-Closing Tags: Like HTML, JSX supports self-closing tags for elements that don't have children, e.g., <input />.
+
+jsx is not a html in javascript 
+jsx is HTML-like or XML-like syntax
+
+
+
+JSX is a syntax extension for javascript and it is used to write the react code in a more readable way.
+
+Jsx is different and react is different. Jsx is a syntax extension for javascript and react is a library that is used to manipulate the DOM.
+
+
+
+*/
+
+
+
+
+/* 
+
+
+Transpiling (or transpilation) is the process of converting code written in one programming language or version of a language into another language or version. In the context of modern web development, transpiling often refers to converting newer JavaScript syntax or languages (such as JSX, TypeScript, or ES6/ES7 JavaScript) into older JavaScript syntax that can be understood and executed by all browsers.
+
+Here's a more detailed breakdown:
+
+1. **Syntax Transformation**: Transpilers convert code from one syntax to another. For example, Babel can convert JSX syntax into regular JavaScript, and ES6+ features (like arrow functions, classes, and template literals) into ES5 syntax.
+
+2. **Browser Compatibility**: Many modern JavaScript features are not supported in all browsers, especially older ones. Transpiling ensures that code using these features can run on any browser by converting it to a version that has wider support.
+
+3. **Tools**: Common tools for transpiling include Babel for JavaScript and TypeScript Compiler (tsc) for TypeScript. These tools take in your source code, apply transformations, and output code that is compatible with target environments.
+
+### Example: JSX Transpilation
+
+Consider the following JSX code:
+
+```jsx
+const element = <h1>Hello, world!</h1>;
+```
+
+A transpiler like Babel will convert this into regular JavaScript code that uses `React.createElement`:
+
+```javascript
+const element = React.createElement('h1', null, 'Hello, world!');
+```
+
+### Example: ES6 to ES5
+
+ES6 arrow function:
+
+```javascript
+const add = (a, b) => a + b;
+```
+
+After transpiling to ES5:
+
+```javascript
+var add = function(a, b) {
+  return a + b;
+};
+```
+
+### Benefits of Transpiling
+
+- **Cross-Browser Compatibility**: Ensures your code works across all browsers, including older ones.
+- **Use of Modern Features**: Allows developers to use the latest language features and syntactic sugar without worrying about compatibility issues.
+- **Code Consistency**: Helps maintain consistency in codebases by standardizing the code that gets shipped to production.
+
+In your React project with Parcel, Babel can be configured to handle the transpilation of JSX and modern JavaScript features into a version that is compatible with the browsers you intend to support.
+
+
+
+*/
+
+
+
+
+
+const Heading = React.createElement("h1", {id:"heading"}, "Hello World from React!");
+console.log(Heading);
+
+const jsxHeading = <h1>Hello, I am using JSX here!</h1>;
+console.log(jsxHeading);
+
+// Both will print same object that means jsx is creating react element in the background and react element is an object.
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(Heading);
+root.render(jsxHeading);
+
+// it will render the jsxHeading in the root element and it will replace the Heading element with jsxHeading element in the root element.
+
+
+// Difference between jsx and html
+
+
+
+/* 
+
+JSX (JavaScript XML) and HTML (HyperText Markup Language) are similar in that they both describe the structure of a user interface. However, they have some key differences due to their purposes and contexts in which they are used. Here’s a detailed comparison:
+
+### JSX
+
+- **Usage Context**: JSX is used within JavaScript code, primarily with React, to describe the UI components.
+
+- **Syntax**: JSX syntax is similar to HTML but can embed JavaScript expressions directly within the markup using curly braces `{}`.
+
+- **Compilation**: JSX is not directly executable by browsers. It needs to be transpiled (e.g., by Babel) into JavaScript, specifically into `React.createElement` calls.
+
+- **Attributes**: JSX uses camelCase for attribute names (e.g., `className` instead of `class`, `onClick` instead of `onclick`).
+
+- **JavaScript Integration**: In JSX, you can embed JavaScript expressions directly. For example:
+
+  ```jsx
+  const name = "Vinay";
+  const element = <h1>Hello, {name}!</h1>;
+  ```
+
+- **Components**: JSX can be used to define and use custom components, which are not a part of HTML.
+
+### HTML
+
+- **Usage Context**: HTML is the standard markup language for creating web pages. It is used to structure the content on the web.
+
+- **Syntax**: HTML syntax is a straightforward markup language that does not allow embedding of JavaScript directly within the tags (though it can include script tags for JavaScript).
+
+- **Execution**: HTML is directly rendered by browsers without the need for any compilation or transpilation.
+
+- **Attributes**: HTML attributes are generally written in lowercase (e.g., `class`, `onclick`).
+
+- **JavaScript Integration**: JavaScript can be included in HTML files using `<script>` tags, but you cannot embed JavaScript directly within HTML attributes without using event handlers or JavaScript expressions.
+
+  ```html
+  <div>Hello, world!</div>
+  <script>
+    const name = "Vinay";
+    document.querySelector('div').innerText = `Hello, ${name}!`;
+  </script>
+  ```
+
+-**Components**: HTML does not have a built-in concept of reusable components like JSX does with React.
+
+### Detailed Comparison
+
+1. **Syntax and Flexibility**:
+   - **JSX**: 
+     ```jsx
+     const element = <h1>Hello, world!</h1>;
+     ```
+     You can embed JavaScript expressions:
+     ```jsx
+     const name = "Vinay";
+     const element = <h1>Hello, {name}!</h1>;
+     ```
+   - **HTML**: 
+     ```html
+     <h1>Hello, world!</h1>
+     ```
+
+2. **Attributes**:
+
+   - **JSX**:
+     ```jsx
+     <div className="container"></div>
+     <button onClick={handleClick}>Click me</button>
+     ```
+   - **HTML**:
+     ```html
+     <div class="container"></div>
+     <button onclick="handleClick()">Click me</button>
+     ```
+
+3. **Component Usage**:
+
+   - **JSX**: Custom components can be created and used like regular HTML elements.
+     ```jsx
+     function Greeting(props) {
+       return <h1>Hello, {props.name}</h1>;
+     }
+     const element = <Greeting name="Vinay" />;
+     ```
+   - **HTML**: Does not support custom components in the same way. You would need additional JavaScript to achieve similar functionality.
+
+### Conclusion
+While JSX and HTML look similar, JSX offers the powerful capability of embedding JavaScript within the markup, enabling dynamic and interactive UI development in React applications. HTML, on the other hand, is static and used primarily for defining the structure and content of web pages, without direct integration with JavaScript.
+
+
+*/
+
+
+
+
+
