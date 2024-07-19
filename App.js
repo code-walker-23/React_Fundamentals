@@ -74,7 +74,9 @@ console.log(root); */
 
 // crossorigin attribute
 
-/* The crossorigin attribute in React is used to specify how the browser should handle cross-origin requests for elements like images, scripts, and links. This attribute is part of HTML and can be used in JSX within React components to control the behavior of fetching resources from different origins.
+/* 
+
+The crossorigin attribute in React is used to specify how the browser should handle cross-origin requests for elements like images, scripts, and links. This attribute is part of HTML and can be used in JSX within React components to control the behavior of fetching resources from different origins.
 
 Here are the possible values for the crossorigin attribute and their meanings:
 
@@ -116,39 +118,11 @@ object => DOM element(rendered in the DOM)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* 
 
 JSX is a statically-typed, object-oriented programming language designed to run on modern web browsers. It is a syntax extension for JavaScript that allows developers to write HTML-like code within their JavaScript files. JSX is commonly used with React to describe what the UI should look like.
 
-JSX, or JavaScript XML, is a syntax extension for JavaScript used with React to describe what the UI should look like. Here are some key points about JSX:
+JSX, or JavaScript XML(Extensible Markup Language), is a syntax extension for JavaScript used with React to describe what the UI should look like. Here are some key points about JSX:
 
 Looks Like HTML: JSX looks similar to HTML but is written within JavaScript. This makes it easier to write and understand the structure of the UI components.
 
@@ -172,6 +146,9 @@ Jsx is different and react is different. Jsx is a syntax extension for javascrip
 
 
 */
+
+
+
 
 
 
@@ -235,7 +212,7 @@ In your React project with Parcel, Babel can be configured to handle the transpi
 
 
 
-const Heading = React.createElement("h1", {id:"heading"}, "Hello World from React!");
+/* const Heading = React.createElement("h1", {id:"heading"}, "Hello World from React!");
 console.log(Heading);
 
 const jsxHeading = <h1>Hello, I am using JSX here!</h1>;
@@ -246,16 +223,20 @@ console.log(jsxHeading);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(Heading);
-root.render(jsxHeading);
+root.render(jsxHeading); */
 
 // it will render the jsxHeading in the root element and it will replace the Heading element with jsxHeading element in the root element.
+
+
+
 
 
 // Difference between jsx and html
 
 
-
 /* 
+
+
 
 JSX (JavaScript XML) and HTML (HyperText Markup Language) are similar in that they both describe the structure of a user interface. However, they have some key differences due to their purposes and contexts in which they are used. Here’s a detailed comparison:
 
@@ -346,6 +327,225 @@ While JSX and HTML look similar, JSX offers the powerful capability of embedding
 
 
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+
+React Components -> it is a building block of the react application
+
+React components are the reusable pieces of the code that can be used to create the user interface
+
+Types of React Components:
+1. Functional Components
+2. Class Components
+
+Functional Components: 
+- Functional components are the javascript functions that accept the props and return the react element
+- Functional components are also called as stateless components
+- Functional components are the simplest way to define the components in react
+
+Class Components:
+- Class components are the ES6 classes that extend from React.Component
+- Class components are also called as stateful components
+- Class components have additional features like state and lifecycle methods
+
+Functional Components are better than the class components because functional components are simple and easy to understand and easy to test.
+
+Everything in react is a component and every component is a function or class.
+
+A function which return a jsx is called as a functional component.
+A javascript function that accepts the props and returns the react element is called as a functional component.
+
+
+*/
+
+
+
+
+
+
+/* 
+
+
+// React element
+const heading = (<h1 className='head'>
+    Hello World from React!
+  </h1>
+);
+
+*/
+  
+
+
+
+
+// Rendering react component inside the another react component
+
+/*
+
+const Title = () => (
+  <h1 className="head">
+    Hello World from React!
+  </h1>
+);
+
+
+// React Functional Component
+// component composition -> it is a concept of combining the components to create the complex components
+const HeadingComponent = () => ( 
+  <div id="container">
+    <Title /> or <Title></Title> or {Title()}
+    <h1 className='Heading'>Hello, I am a functional component!</h1>
+  </div>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(heading);
+// root.render(HeadingComponent());
+root.render(<HeadingComponent />);
+
+// console.log(heading);
+// console.log(HeadingComponent());
+console.log(HeadingComponent); //transpiled version of the functional component 
+
+*/
+
+
+
+
+
+
+// Rendering the react element inside the react component
+
+/* 
+
+
+const title =(
+  <h1 className="head">
+    Hello World from React!
+  </h1>
+);
+
+const HeadingComponent = () => ( 
+  <div id="container">
+    {title}
+    <h1 className='Heading'>Hello, I am a functional component!</h1>
+  </div>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(heading);
+// root.render(HeadingComponent());
+root.render(<HeadingComponent />);
+
+
+*/
+
+
+
+
+
+
+
+// Rendering raect elemet inside the another react element
+
+/* 
+
+
+const title =(
+  <h1 className="head">
+    Hello World from React!
+  </h1>
+);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const HeadingComponent = ( 
+  <div id="container">
+    {title}
+    <h1 className='Heading'>Hello, I am a functional component!</h1>
+  </div>
+);
+
+root.render(HeadingComponent);
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+const title =(
+  <h1 className="head">
+    Hello World from React!
+  </h1>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const HeadingComponent = () => 
+   (
+    <>
+      <div id="container1">
+      {title}
+      <h1 className='heading'>Hello, I am a functional component!</h1>
+      </div>
+      <div id="container2">
+      {title}
+      <h1>{"Vinay Chhabra"}</h1>
+      <h1 className='heading'>Hello, I am a functional component!</h1>
+      </div>
+    </>
+  
+  ); 
+  // you can add inside pair of curly braces but write explicitly return
+
+// These all are same
+root.render(HeadingComponent());
+// root.render(<HeadingComponent/>);
+// root.render(<HeadingComponent></HeadingComponent>);
+
+// Jsx is making your code more readable and easy to understand instead of writing the react element in the javascript object.
+
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
