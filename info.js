@@ -209,3 +209,7 @@ By understanding these differences and best practices, you can optimize the perf
 
 
 */
+
+
+
+/* The issue lies in your use of React's createRoot method. You are trying to create two separate roots (root and app), but React 18's createRoot method is typically used to initialize one root instance for the entire application. */
