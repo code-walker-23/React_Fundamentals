@@ -485,3 +485,9 @@ If some is added with some id it will render that restuarant card only and not t
 Big operation is done in O(1) time complexity
 
 */
+
+/* 
+
+UI is driven by config and this config is coming from the network(Backend).
+
+*/
